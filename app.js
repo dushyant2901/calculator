@@ -1,6 +1,7 @@
 console.log("ji")
 let buttons = document.querySelectorAll(".btn");
-const screen = document.querySelector("screen");
+const screen = document.querySelector("#screen");
+let screenValue=""
 
 //buttons.addEventListener("click",(e)=>{
    //// let btnTxt=e.target.innerText;
@@ -11,5 +12,15 @@ const screen = document.querySelector("screen");
 for (item of buttons){
 item.addEventListener("click",(event)=>{
 let btnTxt=event.target.innerText;
-console.log(btnTxt)
+
+if(btnTxt== "C"){
+    screenValue="";
+    screen.value=screenValue
+}else if(btnTxt== "="){
+    screen.value=eval(screenValue)
+
+}else{
+    screenValue+=btnTxt
+screen.value= screenValue
+}
 })}
